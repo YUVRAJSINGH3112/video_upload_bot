@@ -1,7 +1,7 @@
 import requests
 import os
 
-FLIC_TOKEN = "your_flic_token"
+FLIC_TOKEN="flic_9900014bbfe0065418c4a3ab6525bfd582799e50f4136a602ed983ace2524b2e"
 
 async def upload_videos(file_path):
     try:
@@ -22,7 +22,7 @@ async def upload_videos(file_path):
             "title": os.path.basename(file_path),
             "hash": video_hash,
             "is_available_in_public_feed": False,
-            "category_id": 1
+            "category_id": 25
         }
         post_response = requests.post("https://api.socialverseapp.com/posts", json=body, headers=headers)
         post_response.raise_for_status()
